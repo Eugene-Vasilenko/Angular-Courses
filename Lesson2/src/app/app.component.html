@@ -1,0 +1,26 @@
+{{title}}
+
+<br>
+
+<button (click)="handleClick()">Click me!</button>
+
+<br>
+
+<input type="text" [value]="title">
+
+<br>
+
+<input type="text" [(ngModel)]="title">
+
+<br>
+
+<ul>
+    <li *ngFor="let item of listOfStrings">
+        {{item}}
+    </li>
+</ul>
+
+<!-- <div class="blue-div" *ngIf="showDiv"></div> -->
+
+
+<div class="samle-div" [ngClass]="{'blue-div': showDiv}"></div>
