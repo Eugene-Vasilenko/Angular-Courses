@@ -15,12 +15,19 @@
 <br>
 
 <ul>
-    <li *ngFor="let item of listOfStrings">
-        {{item}}
-    </li>
+    <ng-container *ngFor="let item of listOfStrings">
+        <ng-container *ngTemplateOutlet="testTemplate; context:{ $implicit: item}"></ng-container>
+    </ng-container>
 </ul>
 
 <!-- <div class="blue-div" *ngIf="showDiv"></div> -->
 
 
 <div class="samle-div" [ngClass]="{'blue-div': showDiv}"></div>
+
+
+<ng-template #testTemplate let-itemAlias>
+    <li>
+        {{itemAlias}}
+    </li>
+</ng-template>
