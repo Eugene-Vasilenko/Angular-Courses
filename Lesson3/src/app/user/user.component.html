@@ -1,0 +1,19 @@
+<p>Identifier: {{user.id}}</p>
+
+<p class="user_name">
+  Name: <input type="text" [(ngModel)]="user.name" #nameRef>
+</p>
+
+<p>
+  Age: <input type="number" [(ngModel)]="user.age">
+</p>
+
+<br>
+
+<button (click)="sayHelloToOther.emit(user.name)">say hello</button>
+
+<br>
+
+<button (click)="checkRef()">Test</button>
+
+<ng-content></ng-content>

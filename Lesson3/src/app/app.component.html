@@ -1,0 +1,12 @@
+<app-user *ngFor="let user of users" [user]="user" (sayHelloToOther)="receiveHello($event)">
+  <p *ngIf="user.description">
+    Description: {{user.description}}
+  </p>
+</app-user>
+
+<br>
+
+<button (click)="checkUserRefs()">Check Urser component refs</button>
+
+
+<!-- {{users | json}} -->
