@@ -1,0 +1,35 @@
+<button (click)="showThirdParagraph = !showThirdParagraph">toggle third paragraph visibility</button>
+
+<p appCustomStyle="blue">
+  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi expedita ipsam voluptatum quaerat, at nulla, laboriosam
+  impedit perspiciatis ipsum rerum vitae quia praesentium, quae sit dignissimos cupiditate consequuntur consequatur
+  voluptates!
+</p>
+
+<p appCustomStyle="red">
+  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium totam sequi magnam laborum? Corrupti et deserunt
+  ipsa neque, laudantium dolorem nesciunt optio nam obcaecati deleniti inventore accusantium necessitatibus minus sint!
+</p>
+
+<p [appCustomStyle]="greenColor" *appShowMe="showThirdParagraph">
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus recusandae pariatur explicabo tempora nesciunt quas
+  facilis quod? Pariatur illo ea numquam blanditiis, culpa quo incidunt maxime reiciendis fuga laborum ex?
+</p>
+
+<br>
+
+<span>
+  {{ now | date : 'mm:ss.SSS' }}
+</span>
+
+<p>
+  {{someText | customUppercase }}
+</p>
+
+<br>
+
+<input type="text" [(ngModel)]="textFilter">
+
+<p *ngFor="let txt of arrayOfText | customFilter : textFilter">
+  {{txt}}
+</p>
