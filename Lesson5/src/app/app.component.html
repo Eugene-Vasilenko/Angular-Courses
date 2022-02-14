@@ -1,0 +1,63 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="name">Name</label>
+    <input id="name" type="text" formControlName="name">
+    <span class="error" *ngIf="form.controls['name'].hasError('required')">required</span>
+    <span class="error" *ngIf="form.controls['name'].hasError('forbiddenValueAsync')">forbidden value</span>
+  </div>
+  <div>
+    <label for="email">Email</label>
+    <input id="email" type="email" formControlName="email">
+    <span class="error" *ngIf="form.controls['email'].hasError('required')">required</span>
+    <span class="error" *ngIf="form.controls['email'].hasError('email')">email is invalid</span>
+  </div>
+  <div>
+    <label for="age">Age</label>
+    <input id="age" type="number" formControlName="age">
+    <span class="error" *ngIf="form.controls['age'].hasError('required')">required</span>
+    <span class="error" *ngIf="form.controls['age'].hasError('min')">age is invalid</span>
+  </div>
+  <div>
+    <label for="sex">Sex</label>
+    <select id="sex" formControlName="sex">
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+    </select>
+    <span class="error" *ngIf="form.controls['sex'].hasError('required')">required</span>
+  </div>
+  <div>
+    <label for="aggre">Aggre</label>
+    <input id="aggre" type="checkbox" formControlName="aggre">
+    <span class="error" *ngIf="form.controls['aggre'].hasError('required')">required</span>
+  </div>
+
+
+  <div formGroupName="address">
+    <h4>Address</h4>
+
+    <button type="button" (click)="applyDefaultAddress()">Apply default Address</button>
+
+    <div>
+      <label for="country">Name</label>
+      <input id="country" type="text" formControlName="country">
+    </div>
+    <div>
+      <label for="city">Name</label>
+      <input id="city" type="text" formControlName="city">
+      <span class="error" *ngIf="addressGroup.controls['city'].hasError('required')">required</span>
+    </div>
+    <div>
+      <label for="street">Name</label>
+      <input id="street" type="text" formControlName="street">
+      <span class="error" *ngIf="addressGroup.controls['street'].hasError('required')">required</span>
+    </div>
+    <div>
+      <label for="homeNumber">Name</label>
+      <input id="homeNumber" type="number" formControlName="homeNumber">
+      <span class="error" *ngIf="addressGroup.controls['homeNumber'].hasError('required')">required</span>
+    </div>
+
+  </div>
+
+  <button type="submit" [disabled]="form.invalid">Submit</button>
+</form>
