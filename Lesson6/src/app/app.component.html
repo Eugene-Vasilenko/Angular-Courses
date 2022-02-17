@@ -1,0 +1,24 @@
+<!-- <div>
+  <app-second></app-second>
+</div>
+<div>
+  <app-third></app-third>
+</div> -->
+
+
+<button (click)="addProduct()">Add Product</button>
+
+<p *ngFor="let product of products">
+  <span>id: {{product.id}}</span>
+  <span>title: {{product.title}}</span>
+  <span>category: {{product.category}}</span>
+  <span>description: {{product.description}}</span>
+  <span>price: {{product.price}}</span>
+
+  <button (click)="updateProductPrice(product)">Update price</button>
+  <button (click)="deleteProduct(product)">Delete</button>
+</p>
+
+<div class="loading-container" *ngIf="loadingIndicator.isLoading">
+  <div class="loader">Loading...</div>
+</div>
