@@ -1,0 +1,19 @@
+ul.main-menu{
+    border-bottom: 2px solid lightslategray;
+
+    &>li{
+        list-style: none;
+        display: inline-block;
+        background-color: lightblue;
+        padding: 10px;
+
+        .active{
+            background-color: lightcoral;
+        }
+    }
+}
+
+.login-btn{
+    float: right;
+    margin: 10px;
+}

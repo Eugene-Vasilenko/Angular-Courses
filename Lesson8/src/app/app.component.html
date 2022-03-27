@@ -1,0 +1,11 @@
+<button class="login-btn" (click)="loginService.isLoggedIn = !loginService.isLoggedIn">{{loginService.isLoggedIn ?
+  'Logout' :
+  'Login'}}</button>
+
+<ul class="main-menu">
+  <li> <a routerLinkActive="active" routerLink="/" [routerLinkActiveOptions]="{exact: true}">Home</a> </li>
+  <li *ngIf="loginService.isLoggedIn"> <a routerLinkActive="active" routerLink="/users">Users</a> </li>
+  <li> <a routerLinkActive="active" routerLink="/about" [queryParams]="{q1: 'first', q2: 'second'}">About</a> </li>
+</ul>
+
+<router-outlet></router-outlet>

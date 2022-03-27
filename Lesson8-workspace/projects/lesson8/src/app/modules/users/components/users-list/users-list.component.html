@@ -1,0 +1,11 @@
+<div class="list">
+  <h4>Users list</h4>
+  <div *ngFor="let user of users" (click)="showDetails(user)">
+    <span class="user-name">{{user.name}}</span>
+  </div>
+
+</div>
+
+<div class="details">
+  <router-outlet></router-outlet>
+</div>
