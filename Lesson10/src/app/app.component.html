@@ -1,0 +1,11 @@
+<input type="text" #newTodoTitle>
+<button (click)="addTodo(newTodoTitle.value); newTodoTitle.value = ''">Add</button>
+
+
+<ul>
+  <li *ngFor="let todo of (todos$ | async)">
+    <input type="checkbox" [ngModel]="todo.isDone" (change)="toggleTodoState(todo)">
+    <span>{{todo.title}}</span>
+    <button (click)="deleteTodo(todo.id)">X</button>
+  </li>
+</ul>
